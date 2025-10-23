@@ -11,10 +11,18 @@
   Placeholder : levée d'erreur pour indiquer que l'exercice doit être implémenté.
 */
 function estImpair(n) {
-  // Exercice non implémenté : vérifier si n est impair
-  // Placeholder neutre : retourne null pour indiquer non-implémentation
-  return null;
+  // Vérification du type
+  if (typeof n !== 'number' || isNaN(n)) return null;
+
+  // Vérification que c'est un entier
+  if (!Number.isInteger(n)) return false;
+
+  // Vérification de l'impair
+  return Math.abs(n % 2) === 1;
 }
 
+console.log("estImpair(7) =", estImpair(7)); // Affiche : true
+console.log("estImpair(10) =", estImpair(10)); // Affiche : false
+console.log("estImpair('ijk') =", estImpair("ijk"));
 // Ne pas modifier la ligne ci-dessous
 module.exports = { estImpair };
